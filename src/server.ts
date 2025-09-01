@@ -14,4 +14,8 @@ server.engine("mustache", mustache());
 server.use(express.static(path.join(__dirname, "public")));
 server.use(mainRouter);
 
+server.use((req, res) => {
+  res.render("pages/404");
+});
+
 server.listen(process.env.PORT);
